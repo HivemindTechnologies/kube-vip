@@ -116,7 +116,7 @@ func GetName(service *v1.Service) (string, string) {
 	if !exists || serviceLease == "" {
 		serviceLease = fmt.Sprintf("kubevip-%s", service.Name)
 	}
-	serviceLeaseID := fmt.Sprintf("%s/%s", serviceLease, service.Namespace)
+	serviceLeaseID := serviceLease
 	return serviceLease, serviceLeaseID
 }
 
